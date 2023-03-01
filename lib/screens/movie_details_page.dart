@@ -15,8 +15,6 @@ class MovieDetails extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        width: width,
-        height: height,
         decoration: Decorations.backgroundGradiant,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

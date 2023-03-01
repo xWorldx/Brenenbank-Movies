@@ -63,7 +63,6 @@ class _AppTextFieldState extends State<AppTextField> {
                 CupertinoButton(
                   onPressed: () async => await fetchdata(context),
                   child: Container(
-                    color: Colors.brown.withOpacity(0.0),
                     child: Container(child: Icon(Icons.search, color: Colors.cyan, size: 30)),
                   ),
                 ),
