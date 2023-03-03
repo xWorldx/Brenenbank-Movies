@@ -22,12 +22,13 @@ class MoviesPage extends StatelessWidget {
           itemCount: movies.length,
           itemBuilder: (context, index) {
             final x = movies[index];
-            if (x.image == null || x.image == 'N/A') {
+            if (x.image == null || x.image == 'N/A' || x.name == "" || x.name == null) {
               return Container();
             } else {
               return Container(
                 padding: EdgeInsets.only(left: 10.0, right: 5.0, bottom: 5.0, top: 5.0),
-                child: Material(
+                child: Material(git add .
+
                   color: Colors.transparent,
                   child: InkWell(
                     highlightColor: Colors.grey,
