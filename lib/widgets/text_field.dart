@@ -25,6 +25,8 @@ class _AppTextFieldState extends State<AppTextField> {
   void initState() {
     _node = FocusNode();
     _controller = TextEditingController();
+    _node.addListener(_handleFocusChange);
+
     super.initState();
   }
 
@@ -33,6 +35,11 @@ class _AppTextFieldState extends State<AppTextField> {
     _node.dispose();
     _controller.dispose();
     super.dispose();
+  }
+
+  void _handleFocusChange() {
+    if (_node.hasFocus == false) {
+    } else {}
   }
 
   @override
@@ -50,7 +57,6 @@ class _AppTextFieldState extends State<AppTextField> {
                   child: TextField(
                     decoration: InputDecoration.collapsed(hintText: 'Search Your Movie', hintStyle: TextStyles.hintText),
                     autocorrect: true,
-                    autofocus: true,
                     style: TextStyles.normalText,
                     controller: _controller,
                     focusNode: _node,
@@ -83,6 +89,7 @@ class _AppTextFieldState extends State<AppTextField> {
       Iterable listOfMovies = result['Search'];
       if (listOfMovies != null) {
         final movies = listOfMovies.map((e) => Movie.fromJason(e)).toList();
+
         Navigator.push(context, CupertinoPageRoute(builder: (context) => MoviesPage(movies: movies)));
       } else {
         setState(() => errorMessage = true);

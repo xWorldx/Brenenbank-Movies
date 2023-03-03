@@ -27,8 +27,7 @@ class MoviesPage extends StatelessWidget {
             } else {
               return Container(
                 padding: EdgeInsets.only(left: 10.0, right: 5.0, bottom: 5.0, top: 5.0),
-                child: Material(git add .
-
+                child: Material(
                   color: Colors.transparent,
                   child: InkWell(
                     highlightColor: Colors.grey,
